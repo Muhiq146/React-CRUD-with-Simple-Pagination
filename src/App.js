@@ -43,6 +43,7 @@ export default class App extends Component {
     );
   };
 
+//   This code is for changing the page.
   loadMoreData() {
     const data = this.state.orgtableData;
 
@@ -56,6 +57,7 @@ export default class App extends Component {
     });
   }
 
+//   This code is for adding the data to the server.
   dataAdd = () => {
     let bodyFormData = {
       name: this.state.name,
@@ -82,6 +84,7 @@ export default class App extends Component {
     this.componentDidMount();
   };
 
+//   This code will show the data in a table when you execute the code.
   componentDidMount() {
     axios
       .get("http://192.168.1.179:3000/product/read", {
@@ -112,6 +115,7 @@ export default class App extends Component {
     console.log(this.state.upid);
   };
 
+  //   This code is for updating the data.
   dataUpdate = () => {
     let updateData = {
       name: this.state.updateName,
@@ -139,6 +143,7 @@ export default class App extends Component {
     this.setState({ updateCategory: "" });
   };
 
+//   This code is for deleting data.
   dataDelete = (e) => {
     console.log(e);
     axios
@@ -152,11 +157,6 @@ export default class App extends Component {
       });
     this.componentDidMount();
   };
-
-  handlePageChange(pageNumber) {
-    console.log(`active page is ${pageNumber}`);
-    this.setState({ activePage: pageNumber });
-  }
 
   nam = (e) => {
     this.setState({ name: e.target.value });
@@ -343,8 +343,8 @@ export default class App extends Component {
             </div>
           </div>
         </div>
-        {/* Code for Table */}
 
+        {/* Code for Table */}
         <div>
           <table className="table">
             <thead>
@@ -397,6 +397,7 @@ export default class App extends Component {
             </tbody>
           </table>
         </div>
+        {/* Code for React Pagination */}
         <ReactPaginate
           previousLabel={"prev"}
           nextLabel={"next"}
@@ -410,46 +411,6 @@ export default class App extends Component {
           subContainerClassName={"pages pagination"}
           activeClassName={"active"}
         />
-        {/* Code for Input Section */}
-        {/* <div className="row">
-          <input
-            className="form-control col mx-2"
-            onChange={this.nam}
-            value={this.state.name}
-            type="text"
-            placeholder="Name"
-          />
-          <input
-            className="form-control col mx-2"
-            onChange={this.desc}
-            value={this.state.description}
-            type="text"
-            placeholder="Description"
-          />
-          <input
-            className="form-control col mx-2"
-            onChange={this.pri}
-            value={this.state.price}
-            type="number"
-            placeholder="Price"
-          />
-          <input
-            className="form-control col mx-2"
-            onChange={this.cat}
-            value={this.state.category}
-            type="text"
-            placeholder="Category"
-          />
-        </div> */}
-
-        {/* Code for Pagination */}
-        {/* <Pagination
-          activePage={this.state.activePage}
-          hPerPage={5}
-          totalItemsCount={15}
-          pageRangeDisplayed={5}
-          onChange={this.handlePageChange.bind(this)}
-        /> */}
       </div>
     );
   }
