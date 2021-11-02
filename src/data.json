@@ -1,0 +1,7 @@
+[
+    {"_id": 1, "name": "Macbook Air", "description": "Gold", "price": 122900, "_category": "Laptop"},
+    {"_id": 2, "name": "Macbook pro", "description": "Space Grey", "price": 182500, "_category": "Laptop"},
+    {"_id": 3, "name": "Iphone 12 Pro", "description": "Green", "price": 78687, "_category": "Mobile"},
+    {"_id": 4, "name": "Iphone 13", "description": "Glossy White", "price": 132499, "_category": "Mobile"},
+    {"_id": 5, "name": "Iphone XR", "description": "Sky Blue", "price": 45894, "_category": "Mobile"}
+]
